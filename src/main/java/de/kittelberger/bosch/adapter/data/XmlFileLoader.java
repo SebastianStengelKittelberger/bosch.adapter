@@ -15,12 +15,10 @@ import java.util.*;
 @Component
 public class XmlFileLoader {
 
-
   private static final Logger log = LoggerFactory.getLogger(XmlFileLoader.class);
 
-  @Value("${xml.directory:${user.home}/Downloads/xml}")
+  @Value("${xml.directory}")
   private String xmlDirectory;
-
 
   @PostConstruct
   void logDirectoryInfo() {

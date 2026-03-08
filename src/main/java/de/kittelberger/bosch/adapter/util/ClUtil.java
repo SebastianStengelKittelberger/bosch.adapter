@@ -1,6 +1,7 @@
 package de.kittelberger.bosch.adapter.util;
 
 import de.kittelberger.webexport602w.solr.api.generated.Attrval;
+import de.kittelberger.webexport602w.solr.api.generated.ClngTextList150;
 import de.kittelberger.webexport602w.solr.api.generated.ClngTextList2000;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -61,6 +62,16 @@ public class ClUtil {
 
   public static String getValue(final ClngTextList2000 clNode, Locale locale) {
     return getValueInternal(clNode, getClKey(locale));
+  }
+
+  public static String getValue(final ClngTextList150 clNode, Locale locale) {
+    if (clNode == null || clNode.getClText150() == null) return null;
+    String key = getClKey(locale);
+    return clNode.getClText150().stream()
+      .filter(e -> key.equalsIgnoreCase(e.getCl()))
+      .map(ClngTextList150.ClText150::getValue)
+      .findFirst()
+      .orElse(null);
   }
 
   private static String getValueInternal(final ClngTextList2000 clNode, final String cl) {

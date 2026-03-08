@@ -80,9 +80,7 @@ public class MapProductDTOService {
           .referenceIds(Map.of(
             "attrId", attrval.getAttrdId().longValue()
           ))
-          .references(Pair.of(
-            attrval.getUkey(), mapAttrvalValues(attrval, locale))
-          )
+          .references(mapAttrvalValues(attrval, locale))
           .build())
       .toList();
 
@@ -97,11 +95,10 @@ public class MapProductDTOService {
         Attribute.builder()
           .ukey(attrval.getUkey())
           .referenceIds(Map.of(
-            "attrId", attrval.getAttrdId().longValue()
+            "attrId", attrval.getAttrdId().longValue(),
+            "mediaObjectId", attrval.getMediaobject().longValue()
           ))
-          .references(Pair.of(
-            attrval.getUkey(), mapAttrvalValues(attrval, locale))
-          )
+          .references(mapAttrvalValues(attrval, locale))
           .build())
       .toList();
   }

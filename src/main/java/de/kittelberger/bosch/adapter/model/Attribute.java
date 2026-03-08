@@ -2,7 +2,6 @@ package de.kittelberger.bosch.adapter.model;
 
 import lombok.Builder;
 import lombok.Data;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Map;
 
@@ -15,6 +14,6 @@ public class Attribute {
   /**
    * key: UKEY, value: Map of type und value
    */
-  private Pair<String, Map<String, Object>> references;
+  private Map<String, Object> references;
 
 }
