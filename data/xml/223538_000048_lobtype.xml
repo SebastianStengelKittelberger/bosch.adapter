@@ -1,0 +1,270 @@
+<webexport xsi:schemaLocation="http://www.advasta.com/XMLSchema/6.02w http://www.advasta.com/XMLSchema/6.02w/export.xsd" xmlns="http://www.advasta.com/XMLSchema/6.02w" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.0.2.26583">
+  <header>
+    <timestamp>2026-03-05T01:19:29.000000</timestamp>
+    <programInfo name="boewmdb5.advastamedia_55_602" version="38939" buildDate="2024-03-20T14:00:31.000000"/>
+    <datasource dbOwner="boewmdb5" dbInstance="boewmdb5" dbHost="brutus" user="8546" syslang="en-GB">
+      <name>OCS BI Germany</name>
+    </datasource>
+    <clngList>
+      <clng>de-DE</clng>
+      <clng>en-GB</clng>
+    </clngList>
+  </header>
+  <businessObjects>
+    <lobtype cdat="2011-12-19T13:52:32.000000" udat="2025-03-04T11:56:46.000000" action="C" id="117" mediaobjecttypeId="200000016" mediaobjecttypeUkey="IMAGES" pos="6">
+      <mediatype>image/jpeg</mediatype>
+      <attrclasses>
+        <attrclass ukey="LORES_JPEG_RGB">
+          <name>
+            <clText150 cl="de-DE">LORES_JPEG_RGB</clText150>
+            <clText150 cl="en-GB">LORES_JPEG_RGB</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>LORES_JPEG_RGB</ukey>
+      <name>
+        <clText2000 cl="de-DE">LORES_JPEG_RGB</clText2000>
+        <clText2000 cl="en-GB">LORES_JPEG_RGB</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2017-02-02T09:11:15.000000" udat="2025-03-04T11:56:46.000000" action="C" id="239" mediaobjecttypeId="200000016" mediaobjecttypeUkey="IMAGES" pos="10">
+      <mediatype>image/png</mediatype>
+      <attrclasses>
+        <attrclass ukey="PRODUCT_CUT_OCS">
+          <name>
+            <clText150 cl="de-DE">PRODUCT_CUT_OCS</clText150>
+            <clText150 cl="en-GB">PRODUCT_CUT_OCS</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>PRODUCT_CUT_OCS</ukey>
+      <name>
+        <clText2000 cl="de-DE">PRODUCT_CUT_OCS</clText2000>
+        <clText2000 cl="en-GB">PRODUCT_CUT_OCS</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2009-10-26T16:11:18.000000" udat="2025-03-04T11:56:46.000000" action="C" id="82" mediaobjecttypeId="200000016" mediaobjecttypeUkey="IMAGES" pos="11">
+      <mediatype>image/png</mediatype>
+      <attrclasses>
+        <attrclass ukey="HIRES_PNG_RGB">
+          <name>
+            <clText150 cl="de-DE">HIRES_PNG_RGB</clText150>
+            <clText150 cl="en-GB">HIRES_PNG_RGB</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>HIRES_PNG_RGB</ukey>
+      <name>
+        <clText2000 cl="de-DE">HIRES_PNG_RGB</clText2000>
+        <clText2000 cl="en-GB">HIRES_PNG_RGB</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2009-03-09T16:33:29.000000" udat="2025-03-04T11:56:46.000000" action="C" id="54" mediaobjecttypeId="200000016" mediaobjecttypeUkey="IMAGES" pos="12">
+      <mediatype>image/png</mediatype>
+      <attrclasses>
+        <attrclass ukey="LORES_PNG_RGB">
+          <name>
+            <clText150 cl="de-DE">LORES_PNG_RGB</clText150>
+            <clText150 cl="en-GB">LORES_PNG_RGB</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>LORES_PNG_RGB</ukey>
+      <name>
+        <clText2000 cl="de-DE">LORES_PNG_RGB</clText2000>
+        <clText2000 cl="en-GB">LORES_PNG_RGB</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2006-07-21T10:15:32.000000" udat="2025-03-04T12:00:50.000000" action="C" id="21" mediaobjecttypeId="200000019" mediaobjecttypeUkey="EDITION" pos="1">
+      <mediatype>application/pdf</mediatype>
+      <attrclasses>
+        <attrclass ukey="ORIGINAL_PDF">
+          <name>
+            <clText150 cl="de-DE">ORIGINAL_PDF</clText150>
+            <clText150 cl="en-GB">ORIGINAL_PDF</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>ORIGINAL_PDF</ukey>
+      <name>
+        <clText2000 cl="de-DE">ORIGINAL_PDF</clText2000>
+        <clText2000 cl="en-GB">ORIGINAL_PDF</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2019-11-26T12:48:16.000000" udat="2025-03-04T12:00:50.000000" action="C" id="290" mediaobjecttypeId="200000019" mediaobjecttypeUkey="EDITION" pos="3">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="BA_ZIP">
+          <name>
+            <clText150 cl="de-DE">BA_ZIP</clText150>
+            <clText150 cl="en-GB">BA_ZIP</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>ZIP</ukey>
+      <name>
+        <clText2000 cl="de-DE">ZIP</clText2000>
+        <clText2000 cl="en-GB">ZIP</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2008-05-15T14:09:26.000000" udat="2025-03-04T11:56:46.000000" action="C" id="31" mediaobjecttypeId="200000024" mediaobjecttypeUkey="DA_EDITION_PRINT" pos="1">
+      <mediatype>image/jpeg</mediatype>
+      <attrclasses>
+        <attrclass ukey="PREVIEW_JPEG">
+          <name>
+            <clText150 cl="de-DE">PREVIEW_JPEG</clText150>
+            <clText150 cl="en-GB">PREVIEW_JPEG</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>PREVIEW_JPEG</ukey>
+      <name>
+        <clText2000 cl="de-DE">PREVIEW_JPEG</clText2000>
+        <clText2000 cl="en-GB">PREVIEW_JPEG</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2008-05-15T14:09:27.000000" udat="2025-03-04T12:00:50.000000" action="C" id="32" mediaobjecttypeId="200000024" mediaobjecttypeUkey="DA_EDITION_PRINT" pos="2">
+      <mediatype>application/pdf</mediatype>
+      <attrclasses>
+        <attrclass ukey="PREVIEW_PDF">
+          <name>
+            <clText150 cl="de-DE">PREVIEW_PDF</clText150>
+            <clText150 cl="en-GB">PREVIEW_PDF</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>PREVIEW_PDF</ukey>
+      <name>
+        <clText2000 cl="de-DE">PREVIEW_PDF</clText2000>
+        <clText2000 cl="en-GB">PREVIEW_PDF</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2012-10-08T13:58:55.000000" udat="2025-03-04T12:00:50.000000" action="C" id="128" mediaobjecttypeId="200000066" mediaobjecttypeUkey="HOMOLOGATIONSDATEN" pos="1">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_HOMOLOGATIONS_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_HOMOLOGATIONS_DATEN</clText150>
+            <clText150 cl="en-GB">IW_HOMOLOGATIONS_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>HOMOLOGATION</ukey>
+      <name>
+        <clText2000 cl="de-DE">HOMOLOGATION</clText2000>
+        <clText2000 cl="en-GB">HOMOLOGATION</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2012-10-10T11:51:39.000000" udat="2025-03-04T12:00:50.000000" action="C" id="133" mediaobjecttypeId="200000068" mediaobjecttypeUkey="3D_DATEN" pos="1">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_EXP_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_EXP_DATEN</clText150>
+            <clText150 cl="en-GB">IW_EXP_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>EXP</ukey>
+      <name>
+        <clText2000 cl="de-DE">EXP</clText2000>
+        <clText2000 cl="en-GB">EXP</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2012-10-10T11:51:40.000000" udat="2025-03-04T12:00:50.000000" action="C" id="134" mediaobjecttypeId="200000068" mediaobjecttypeUkey="3D_DATEN" pos="2">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_IGES_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_IGES_DATEN</clText150>
+            <clText150 cl="en-GB">IW_IGES_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>IGES</ukey>
+      <name>
+        <clText2000 cl="de-DE">IGES</clText2000>
+        <clText2000 cl="en-GB">IGES</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2012-10-10T11:51:40.000000" udat="2025-03-04T12:00:50.000000" action="C" id="135" mediaobjecttypeId="200000068" mediaobjecttypeUkey="3D_DATEN" pos="3">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_STEP_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_STEP_DATEN</clText150>
+            <clText150 cl="en-GB">IW_STEP_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>STEP</ukey>
+      <name>
+        <clText2000 cl="de-DE">STEP</clText2000>
+        <clText2000 cl="en-GB">STEP</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2012-10-10T11:51:41.000000" udat="2025-03-04T12:00:50.000000" action="C" id="136" mediaobjecttypeId="200000068" mediaobjecttypeUkey="3D_DATEN" pos="4">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_VRML_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_VRML_DATEN</clText150>
+            <clText150 cl="en-GB">IW_VRML_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>VRML</ukey>
+      <name>
+        <clText2000 cl="de-DE">VRML</clText2000>
+        <clText2000 cl="en-GB">VRML</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2014-09-03T14:05:06.000000" udat="2025-03-04T12:00:50.000000" action="C" id="156" mediaobjecttypeId="200000068" mediaobjecttypeUkey="3D_DATEN" pos="5">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_PROENGINEER_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_PROENGINEER_DATEN</clText150>
+            <clText150 cl="en-GB">IW_PROENGINEER_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>ProEngineer</ukey>
+      <name>
+        <clText2000 cl="de-DE">ProEngineer</clText2000>
+        <clText2000 cl="en-GB">ProEngineer</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2014-09-03T14:05:06.000000" udat="2025-03-04T12:00:50.000000" action="C" id="157" mediaobjecttypeId="200000068" mediaobjecttypeUkey="3D_DATEN" pos="6">
+      <mediatype>application/zip</mediatype>
+      <attrclasses>
+        <attrclass ukey="IW_NEUTRAL_DATEN">
+          <name>
+            <clText150 cl="de-DE">IW_NEUTRAL_DATEN</clText150>
+            <clText150 cl="en-GB">IW_NEUTRAL_DATEN</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>Neutral</ukey>
+      <name>
+        <clText2000 cl="de-DE">Neutral</clText2000>
+        <clText2000 cl="en-GB">Neutral</clText2000>
+      </name>
+    </lobtype>
+    <lobtype cdat="2025-05-15T15:48:13.000000" action="C" id="319" mediaobjecttypeId="200000130" mediaobjecttypeUkey="SOFTWARE" pos="1">
+      <attrclasses>
+        <attrclass ukey="OCS_BMECAT">
+          <name>
+            <clText150 cl="de-DE">OCS_BMECAT</clText150>
+            <clText150 cl="en-GB">OCS_BMECAT</clText150>
+          </name>
+        </attrclass>
+      </attrclasses>
+      <ukey>SOFTWARE</ukey>
+      <name>
+        <clText2000 cl="de-DE">SOFTWARE</clText2000>
+        <clText2000 cl="en-GB">SOFTWARE</clText2000>
+      </name>
+    </lobtype>
+  </businessObjects>
+</webexport>

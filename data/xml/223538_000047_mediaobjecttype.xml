@@ -1,0 +1,347 @@
+<webexport xsi:schemaLocation="http://www.advasta.com/XMLSchema/6.02w http://www.advasta.com/XMLSchema/6.02w/export.xsd" xmlns="http://www.advasta.com/XMLSchema/6.02w" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.0.2.26583">
+  <header>
+    <timestamp>2026-03-05T01:19:29.000000</timestamp>
+    <programInfo name="boewmdb5.advastamedia_55_602" version="38939" buildDate="2024-03-20T14:00:31.000000"/>
+    <datasource dbOwner="boewmdb5" dbInstance="boewmdb5" dbHost="brutus" user="8546" syslang="en-GB">
+      <name>OCS BI Germany</name>
+    </datasource>
+    <clngList>
+      <clng>de-DE</clng>
+      <clng>en-GB</clng>
+    </clngList>
+  </header>
+  <businessObjects>
+    <mediaobjecttype cdat="2006-03-03T11:10:38.000000" udat="2006-03-03T11:10:54.000000" action="C" id="200000011" level="1">
+      <ukey>IMAGES</ukey>
+      <name>
+        <clText2000 cl="de-DE">Bilder</clText2000>
+        <clText2000 cl="en-GB">Images</clText2000>
+      </name>
+      <pos>1</pos>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2006-03-03T11:10:38.000000" udat="2006-03-03T11:10:38.000000" action="C" id="200000014" level="1">
+      <ukey>DOCUMENTS</ukey>
+      <name>
+        <clText2000 cl="de-DE">Dokumente</clText2000>
+        <clText2000 cl="en-GB">Documents</clText2000>
+      </name>
+      <pos>4</pos>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2006-03-03T11:10:38.000000" udat="2011-12-28T12:02:11.000000" action="C" id="200000015" level="1">
+      <ukey>OTHERS</ukey>
+      <name>
+        <clText2000 cl="de-DE">Andere Mediendaten</clText2000>
+        <clText2000 cl="en-GB">Other media data</clText2000>
+      </name>
+      <pos>5</pos>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2006-03-03T11:10:54.000000" udat="2025-09-05T08:19:55.000000" action="C" id="200000016" parentId="200000011" level="2">
+      <ukey>IMAGES</ukey>
+      <name>
+        <clText2000 cl="de-DE">Bilder Bosch</clText2000>
+        <clText2000 cl="en-GB">Images Bosch</clText2000>
+      </name>
+      <pos>1</pos>
+      <objattrs>
+        <attr attr_id="19495" ukey="ALT_TEXT_ACCESSIBILITY_ACT" name="Alt-text, accessibility act" datatype="text" pos="26">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$22">
+              <name>
+                <clText150 cl="de-DE">Bildinformationen</clText150>
+                <clText150 cl="en-GB">Image information</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19474" ukey="SYMBOLIMG_HEADLINE" name="Name" datatype="text" pos="1">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2052">
+              <name>
+                <clText150 cl="de-DE">Detailbeschreibung</clText150>
+                <clText150 cl="en-GB">Detailed description</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19475" ukey="SYMBOLIMG_DESCRIPTION" name="Short description" datatype="text" pos="2">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2052">
+              <name>
+                <clText150 cl="de-DE">Detailbeschreibung</clText150>
+                <clText150 cl="en-GB">Detailed description</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19483" ukey="HOTSPOT_HL_1" name="Hotspot 1 - Headline" datatype="text" pos="1">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19489" ukey="HOTSPOT_DESC_1" name="Hotspot 1 - Description" datatype="text" pos="2">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19484" ukey="HOTSPOT_HL_2" name="Hotspot 2 - Headline" datatype="text" pos="3">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19490" ukey="HOTSPOT_DESC_2" name="Hotspot 2 - Description" datatype="text" pos="4">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19485" ukey="HOTSPOT_HL_3" name="Hotspot 3 - Headline" datatype="text" pos="5">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19491" ukey="HOTSPOT_DESC_3" name="Hotspot 3 - Description" datatype="text" pos="6">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19486" ukey="HOTSPOT_HL_4" name="Hotspot 4 - Headline" datatype="text" pos="7">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19492" ukey="HOTSPOT_DESC_4" name="Hotspot 4 - Description" datatype="text" pos="8">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19487" ukey="HOTSPOT_HL_5" name="Hotspot 5 - Headline" datatype="text" pos="9">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19493" ukey="HOTSPOT_DESC_5" name="Hotspot 5 - Description" datatype="text" pos="10">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19488" ukey="HOTSPOT_HL_6" name="Hotspot 6 - Headline" datatype="text" pos="11">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19494" ukey="HOTSPOT_DESC_6" name="Hotspot 6 - Description" datatype="text" pos="12">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2367">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">Spider Charts</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+      </objattrs>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2006-07-21T10:15:22.000000" udat="2006-07-21T10:15:22.000000" action="C" id="200000017" level="1">
+      <ukey>MANUAL</ukey>
+      <name>
+        <clText2000 cl="de-DE">Bedienungsanleitung</clText2000>
+        <clText2000 cl="en-GB">Instruction manual</clText2000>
+      </name>
+      <pos>6</pos>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2006-07-21T10:15:23.000000" udat="2026-01-19T13:08:39.000000" action="C" id="200000019" parentId="200000017" level="2">
+      <ukey>EDITION</ukey>
+      <name>
+        <clText2000 cl="de-DE">Sprachfassung</clText2000>
+        <clText2000 cl="en-GB">Language version</clText2000>
+      </name>
+      <pos>3</pos>
+      <objattrs>
+        <attr attr_id="19481" ukey="TRADENAMES_OCS" name="Trade names (OCS)" datatype="text" pos="1">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2288">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">OCS</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19482" ukey="DOCUMENTTYPE_OCS" name="Document type" datatype="choice" pos="2">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2288">
+              <name>
+                <clText150 cl="de-DE">&lt;!-- language missing --&gt;</clText150>
+                <clText150 cl="en-GB">OCS</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+      </objattrs>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2008-05-15T14:09:16.000000" udat="2025-03-28T09:58:56.000000" action="C" id="200000023" parentId="200000014" level="2">
+      <ukey>DA_DOCUMENT_PRINT</ukey>
+      <name>
+        <clText2000 cl="de-DE">Dokument - Druck/Dokument</clText2000>
+        <clText2000 cl="en-GB">Document - Print/Document</clText2000>
+      </name>
+      <pos>1</pos>
+      <objattrs>
+        <attr attr_id="19476" ukey="TITLE" name="Title" datatype="text" pos="1">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2058">
+              <name>
+                <clText150 cl="de-DE">Globale Attribute</clText150>
+                <clText150 cl="en-GB">Global attributes</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+      </objattrs>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2008-05-15T14:09:16.000000" udat="2025-02-24T08:34:22.000000" action="C" id="200000024" parentId="200000014" level="2">
+      <ukey>DA_EDITION_PRINT</ukey>
+      <name>
+        <clText2000 cl="de-DE">Sprachvariante - Druck/Dokument</clText2000>
+        <clText2000 cl="en-GB">Language version - Print/Document</clText2000>
+      </name>
+      <pos>2</pos>
+      <objattrs>
+        <attr attr_id="19477" ukey="LANGUAGES" name="Languages" datatype="table" pos="1">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2066">
+              <name>
+                <clText150 cl="de-DE">Globale Attribute</clText150>
+                <clText150 cl="en-GB">Global attributes</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19478" ukey="PRODUCTIONDATE" name="Production date" datatype="date" pos="2">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2066">
+              <name>
+                <clText150 cl="de-DE">Globale Attribute</clText150>
+                <clText150 cl="en-GB">Global attributes</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19479" ukey="COUNTRIES" name="Countries" datatype="choice" pos="3">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2066">
+              <name>
+                <clText150 cl="de-DE">Globale Attribute</clText150>
+                <clText150 cl="en-GB">Global attributes</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+        <attr attr_id="19480" ukey="RELATED_DOCUMENT" name="Belongs to" datatype="objref" pos="5">
+          <attrclasses>
+            <attrclass ukey="OTAC$D$2066">
+              <name>
+                <clText150 cl="de-DE">Globale Attribute</clText150>
+                <clText150 cl="en-GB">Global attributes</clText150>
+              </name>
+            </attrclass>
+          </attrclasses>
+        </attr>
+      </objattrs>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2012-10-08T13:58:00.000000" udat="2023-04-21T10:33:58.000000" action="C" id="200000066" parentId="200000067" level="2">
+      <ukey>HOMOLOGATIONSDATEN</ukey>
+      <name>
+        <clText2000 cl="de-DE">Homologationsdaten</clText2000>
+        <clText2000 cl="en-GB">Homologationsdaten</clText2000>
+      </name>
+      <pos>1</pos>
+      <shortdesc>
+        <clText2000 cl="de-DE">Homologationsdaten für den Bereich Industriewerkzeuge</clText2000>
+        <clText2000 cl="en-GB">Homologationsdaten für den Bereich Industriewerkzeuge</clText2000>
+      </shortdesc>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2012-10-09T15:21:14.000000" udat="2015-04-08T21:53:14.000000" action="C" id="200000067" level="1">
+      <ukey>IW_DATEN</ukey>
+      <name>
+        <clText2000 cl="de-DE">IW-Daten</clText2000>
+        <clText2000 cl="en-GB">IW-Daten</clText2000>
+      </name>
+      <pos>9</pos>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2012-10-08T13:58:00.000000" udat="2023-04-21T10:33:58.000000" action="C" id="200000068" parentId="200000067" level="2">
+      <ukey>3D_DATEN</ukey>
+      <name>
+        <clText2000 cl="de-DE">3D-Daten</clText2000>
+        <clText2000 cl="en-GB">3D-Daten</clText2000>
+      </name>
+      <pos>2</pos>
+      <shortdesc>
+        <clText2000 cl="de-DE">3D-Daten für den Bereich Industriewerkzeuge</clText2000>
+        <clText2000 cl="en-GB">3D-Daten für den Bereich Industriewerkzeuge</clText2000>
+      </shortdesc>
+    </mediaobjecttype>
+    <mediaobjecttype cdat="2025-05-15T15:48:13.000000" udat="2025-10-14T11:16:53.000000" action="C" id="200000130" parentId="200000015" level="2">
+      <ukey>SOFTWARE</ukey>
+      <name>
+        <clText2000 cl="de-DE">&lt;!-- language missing --&gt;</clText2000>
+        <clText2000 cl="en-GB">Software</clText2000>
+      </name>
+      <pos>11</pos>
+    </mediaobjecttype>
+  </businessObjects>
+</webexport>

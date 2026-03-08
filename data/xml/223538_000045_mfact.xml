@@ -1,0 +1,107 @@
+<webexport xsi:schemaLocation="http://www.advasta.com/XMLSchema/6.02w http://www.advasta.com/XMLSchema/6.02w/export.xsd" xmlns="http://www.advasta.com/XMLSchema/6.02w" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.0.2.26583">
+  <header>
+    <timestamp>2026-03-05T01:19:01.000000</timestamp>
+    <programInfo name="boewmdb5.advastamedia_55_602" version="38939" buildDate="2024-03-20T14:00:31.000000"/>
+    <datasource dbOwner="boewmdb5" dbInstance="boewmdb5" dbHost="brutus" user="8546" syslang="en-GB">
+      <name>OCS BI Germany</name>
+    </datasource>
+    <clngList>
+      <clng>de-DE</clng>
+      <clng>en-GB</clng>
+    </clngList>
+  </header>
+  <businessObjects>
+    <mfact cdat="2001-05-09T17:30:38.000000" udat="2007-03-16T10:54:29.000000" action="C" id="1">
+      <ukey>BOSCH</ukey>
+      <name>Bosch</name>
+    </mfact>
+    <mfact cdat="2001-05-09T17:30:39.000000" udat="2001-05-09T17:30:39.000000" action="C" id="3">
+      <ukey>SKIL</ukey>
+      <name>Skil</name>
+    </mfact>
+    <mfact cdat="2012-03-27T17:02:46.000000" udat="2012-03-27T17:02:46.000000" action="C" id="10">
+      <ukey>MAKITA</ukey>
+      <name>Makita</name>
+    </mfact>
+    <mfact cdat="2012-03-27T17:06:58.000000" udat="2012-03-27T17:06:58.000000" action="C" id="11">
+      <ukey>ELU</ukey>
+      <name>Elu</name>
+    </mfact>
+    <mfact cdat="2012-03-29T12:20:47.000000" udat="2012-03-29T12:20:47.000000" action="C" id="12">
+      <ukey>PEUGEOT</ukey>
+      <name>Peugeot</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:10:34.000000" udat="2012-04-03T11:10:34.000000" action="C" id="13">
+      <ukey>AEG</ukey>
+      <name>AEG</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:10:38.000000" udat="2012-04-03T11:10:38.000000" action="C" id="14">
+      <ukey>ATLASCOPCO</ukey>
+      <name>Atlas Copco</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:10:42.000000" udat="2012-04-03T11:10:42.000000" action="C" id="15">
+      <ukey>BLACK&amp;DECKER</ukey>
+      <name>Black &amp; Decker</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:10:52.000000" udat="2012-04-03T11:10:52.000000" action="C" id="17">
+      <ukey>DEWALT</ukey>
+      <name>DeWalt</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:11:03.000000" udat="2014-09-29T11:31:23.000000" action="C" id="19">
+      <ukey>FESTOOL</ukey>
+      <name>Festool</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:11:08.000000" udat="2012-04-03T11:11:08.000000" action="C" id="20">
+      <ukey>HITACHI</ukey>
+      <name>Hitachi</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:11:12.000000" udat="2012-04-03T11:11:12.000000" action="C" id="21">
+      <ukey>HOLZ-HER</ukey>
+      <name>Holz-Her</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:11:16.000000" udat="2012-04-03T11:11:16.000000" action="C" id="22">
+      <ukey>KRESS</ukey>
+      <name>Kress</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:11:20.000000" udat="2012-04-03T11:11:20.000000" action="C" id="23">
+      <ukey>METABO</ukey>
+      <name>Metabo</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:11:24.000000" udat="2012-04-03T11:11:24.000000" action="C" id="24">
+      <ukey>RYOBI</ukey>
+      <name>Ryobi</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:12:14.000000" udat="2012-04-03T11:12:14.000000" action="C" id="25">
+      <ukey>STAYER</ukey>
+      <name>Stayer</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:12:18.000000" udat="2012-04-03T11:12:18.000000" action="C" id="26">
+      <ukey>VIRUTEX</ukey>
+      <name>Virutex</name>
+    </mfact>
+    <mfact cdat="2012-04-03T11:12:22.000000" udat="2012-04-03T11:12:22.000000" action="C" id="27">
+      <ukey>WEGOMA</ukey>
+      <name>Wegoma</name>
+    </mfact>
+    <mfact cdat="2016-06-16T07:40:04.000000" udat="2016-06-16T07:40:04.000000" action="C" id="33">
+      <ukey>3M</ukey>
+      <name>3M</name>
+    </mfact>
+    <mfact cdat="2016-06-16T07:40:04.000000" udat="2016-06-16T07:40:04.000000" action="C" id="34">
+      <ukey>DYNABRADE</ukey>
+      <name>Dynabrade</name>
+    </mfact>
+    <mfact cdat="2016-06-16T07:40:04.000000" udat="2016-06-16T07:40:04.000000" action="C" id="35">
+      <ukey>MIRKA</ukey>
+      <name>Mirka</name>
+    </mfact>
+    <mfact cdat="2016-06-16T07:40:04.000000" udat="2016-06-16T07:40:04.000000" action="C" id="36">
+      <ukey>RUPES</ukey>
+      <name>Rupes</name>
+    </mfact>
+    <mfact cdat="2020-01-02T10:00:43.000000" udat="2020-01-02T10:00:43.000000" action="C" id="39">
+      <ukey>PODDUMMYPRODUCT</ukey>
+      <name>POD Dummy Product</name>
+    </mfact>
+  </businessObjects>
+</webexport>

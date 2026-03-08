@@ -1,0 +1,385 @@
+<webexport xsi:schemaLocation="http://www.advasta.com/XMLSchema/6.02w http://www.advasta.com/XMLSchema/6.02w/export.xsd" xmlns="http://www.advasta.com/XMLSchema/6.02w" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.0.2.26583">
+  <header>
+    <timestamp>2026-03-05T01:13:28.000000</timestamp>
+    <programInfo name="boewmdb5.advastamedia_55_602" version="38939" buildDate="2024-03-20T14:00:31.000000"/>
+    <datasource dbOwner="boewmdb5" dbInstance="boewmdb5" dbHost="brutus" user="8546" syslang="en-GB">
+      <name>OCS BI Germany</name>
+    </datasource>
+    <clngList>
+      <clng>de-DE</clng>
+      <clng>en-GB</clng>
+    </clngList>
+  </header>
+  <businessObjects>
+    <categorytype cdat="2007-07-04T11:20:58.000000" udat="2025-09-02T09:58:37.000000" action="C" id="53" level="1">
+      <ukey>OCS2.0</ukey>
+      <name>
+        <clText2000 cl="de-DE">OCS2.0</clText2000>
+        <clText2000 cl="en-GB">OCS2.0</clText2000>
+      </name>
+      <pos>1</pos>
+      <shortdesc>
+        <clText2000 cl="de-DE">Schablone für Kategorien Onlinekatalog</clText2000>
+        <clText2000 cl="en-GB">Template for categories of online catalogue</clText2000>
+      </shortdesc>
+      <longdesc>
+        <clText2000 cl="de-DE">::do=279512</clText2000>
+        <clText2000 cl="en-GB">::do=279512</clText2000>
+      </longdesc>
+      <catattrs>
+        <attr attr_id="19" ukey="IMAGE_RELAUNCH_GRADIENT" name="Category image gradient (Relaunch)" datatype="blob" pos="6"/>
+        <attr attr_id="20" ukey="IMAGE_RELAUNCH" name="Category image (Relaunch)" datatype="blob" pos="8"/>
+        <attr attr_id="22" ukey="CATEGORY_IMAGE_CSO" name="Category image CSO" datatype="table" pos="10"/>
+        <attr attr_id="21" ukey="IMAGE_RELAUNCH_CATEGORY_PRODUCT" name="Category product image (Relaunch)" datatype="blob" pos="11"/>
+        <attr attr_id="8" ukey="TITLE" name="Category designation" datatype="text" pos="13"/>
+        <attr attr_id="9" ukey="TEXT" name="Category text" datatype="text" pos="14"/>
+        <attr attr_id="97" ukey="STRONG_FILTER_SEO_GLOBAL" name="Strong filter SEO (global)" datatype="text" pos="15"/>
+        <attr attr_id="98" ukey="STRONG_FILTER_SEO_CSO" name="Strong filter SEO (local)" datatype="table" pos="16"/>
+        <attr attr_id="99" ukey="STRONG_FILTER_SEO_BLACKLIST_CSO" name="Strong filter SEO blacklist (local)" datatype="table" pos="17"/>
+        <attr attr_id="10" ukey="BACKNAVIGATION" name="Backward navigation" datatype="text" pos="18"/>
+        <attr attr_id="11" ukey="ROBOTS_FOLLOW" name="SEO tracing" datatype="boolean" pos="20"/>
+        <attr attr_id="12" ukey="ROBOTS_INDEX" name="SEO indexing" datatype="boolean" pos="21"/>
+        <attr attr_id="18" ukey="OCS_FILTER" name="OCS_Filter" datatype="boolean" pos="22"/>
+        <attr attr_id="23" ukey="BI_OCS_CATEGORY_FILTERS" name="OCS_Filter Custom" datatype="text" pos="23"/>
+        <attr attr_id="13" ukey="ORIGINAL_CCAT_ID" name="Category-ID Trade/Industry" datatype="number" pos="24"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2007-07-04T11:20:58.000000" udat="2026-02-24T11:35:22.000000" action="C" id="175" level="1">
+      <ukey>OCS_BI_ROOT</ukey>
+      <name>
+        <clText2000 cl="de-DE">OCS_BI_ROOT</clText2000>
+        <clText2000 cl="en-GB">OCS_BI_ROOT</clText2000>
+      </name>
+      <pos>2</pos>
+      <shortdesc>
+        <clText2000 cl="de-DE">Template für Kategorien Onlinekatalog 2.0</clText2000>
+        <clText2000 cl="en-GB">Template for categories of online catalogue 2.0</clText2000>
+      </shortdesc>
+      <catattrs>
+        <attr attr_id="129" ukey="FOOTNOTE_TEXT_TECHNICAL_DATA" name="Footnote text for technical data" datatype="table" pos="6"/>
+        <attr attr_id="17" ukey="IMAGE_HEADLINE" name="Initial image" datatype="blob" pos="7"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2017-03-28T08:27:18.000000" udat="2026-02-18T07:20:51.000000" action="C" id="285" level="1">
+      <ukey>AC_OCS_MMP_ProductDetailPage</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_OCS_MMP_ProductDetailPage</clText2000>
+        <clText2000 cl="en-GB">AC_OCS_MMP_ProductDetailPage</clText2000>
+      </name>
+      <pos>3</pos>
+      <catattrs>
+        <attr attr_id="54" ukey="OCS_TABLE_ATTRIBUTES" name="Table Attributes Sequence" datatype="text" pos="4"/>
+        <attr attr_id="30" ukey="NAME_LONG" name="Name Long (sg)" datatype="text" pos="5"/>
+        <attr attr_id="31" ukey="NAME_SHORT" name="Name Short" datatype="text" pos="6"/>
+        <attr attr_id="80" ukey="UNIVERSAL_BRAND_FIT" name="Universal Brand Fit" datatype="boolean" pos="8"/>
+        <attr attr_id="96" ukey="UNIVERSAL_BRAND_FIT_ICON" name="Universal Brand Fit Icon" datatype="objref" pos="9"/>
+        <attr attr_id="108" ukey="UNIVERSAL_BRAND_FIT_TEXT" name="Universal Brand Fit Text" datatype="choice" pos="10"/>
+        <attr attr_id="161" ukey="HIDE_UBF_FILTER_ON_WEBSITE" name="Hide Universal brand fit filter on website" datatype="boolean" pos="11"/>
+        <attr attr_id="88" ukey="PRODUCT_CLASSIFICATION" name="Product Classification Definition" datatype="choice" pos="12"/>
+        <attr attr_id="110" ukey="PRODUCT_CLASSIFICATION_FILTER" name="Product Classification" datatype="choice" pos="13"/>
+        <attr attr_id="32" ukey="BENEFIT_HL" name="Benefit HL" datatype="text" pos="14"/>
+        <attr attr_id="90" ukey="BENEFIT_HL_SHORT" name="Benefit HL (short)" datatype="text" pos="15"/>
+        <attr attr_id="33" ukey="PRODUCT_HEADLINE" name="Product Headline" datatype="text" pos="16"/>
+        <attr attr_id="26" ukey="PERFORMANCE_CLAIM_TEXT" name="Performance Claim Text" datatype="text" pos="17"/>
+        <attr attr_id="132" ukey="LEGAL_DISCLAIMER" name="Legal disclaimer" datatype="text" pos="18"/>
+        <attr attr_id="83" ukey="SPIDER_HEADLINE" name="Spider Headline" datatype="text" pos="20"/>
+        <attr attr_id="84" ukey="VIDEO_HEADLINE_TEXT" name="Video Headline Text" datatype="text" pos="21"/>
+        <attr attr_id="81" ukey="APPLICATION_PIC_CLOSE_UP_SHORT_TEXT" name="Application Pic Close Up Short Text" datatype="text" pos="22"/>
+        <attr attr_id="82" ukey="APPLICATION_PIC_CLOSE_UP_LONG_TEXT" name="Application Pic Close Up Long Text" datatype="text" pos="23"/>
+        <attr attr_id="85" ukey="APPLICATION_PIC_WIDE_SHORT_TEXT" name="Application Pic Wide Short Text" datatype="text" pos="24"/>
+        <attr attr_id="36" ukey="APPLICATION_PIC_WIDE_LONG_TEXT" name="Application Pic Wide Long Text" datatype="text" pos="25"/>
+        <attr attr_id="41" ukey="EDITORS_COPY_PART_1" name="Editors Copy Part 1 (User Challenge)" datatype="text" pos="26"/>
+        <attr attr_id="42" ukey="EDITORS_COPY_PART_2" name="Editors Copy Part 2 (Bosch Solution)" datatype="text" pos="48"/>
+        <attr attr_id="43" ukey="EDITORS_COPY_PART_3" name="Editors Copy Part 3 (Call to action)" datatype="text" pos="49"/>
+        <attr attr_id="44" ukey="PERFORMANCE_CLASS" name="Performance Class Definition" datatype="choice" pos="71"/>
+        <attr attr_id="111" ukey="PERFORMANCE_CLASS_FILTER" name="Performance Class" datatype="choice" pos="72"/>
+        <attr attr_id="50" ukey="REPRESENTATIVE_PRODIMG" name="Representative Product Pic unpacked, front side" datatype="objref" pos="73"/>
+        <attr attr_id="52" ukey="REPRESENTATIVE_PIC_PROD_VP" name="Representative Product Pic packed, front side" datatype="objref" pos="74"/>
+        <attr attr_id="51" ukey="REPRESENTATIVE_PRODIMG_UP_BACK" name="Representative Product Pic unpacked, back side" datatype="objref" pos="75"/>
+        <attr attr_id="53" ukey="REPRESENTATIVE_PRODIMG_P_BACK" name="Representative Product Pic packed, back side" datatype="objref" pos="76"/>
+        <attr attr_id="152" ukey="REPRESENTATIVE_GPSR_DIGITAL_LABEL" name="Representative GPSR – Digital label" datatype="objref" pos="77"/>
+        <attr attr_id="47" ukey="APPLICATION_VIDEO" name="Application Video" datatype="number" pos="78"/>
+        <attr attr_id="113" ukey="APPLICATION_PICTURE_WEBSITE" name="Application Pictures Website" datatype="objref" pos="80"/>
+        <attr attr_id="48" ukey="APPLICATION_PICTURE_WIDE_SHOT" name="Application Pictures Wide Shot" datatype="objref" pos="81"/>
+        <attr attr_id="28" ukey="APPLICATION_PICTURE_CLOSE_UP" name="Application Pictures Close Up" datatype="objref" pos="82"/>
+        <attr attr_id="117" ukey="SPIDER_CHART_WITHOUT_GLOW" name="Spider Chart without Glow" datatype="objref" pos="83"/>
+        <attr attr_id="29" ukey="PITCH_PICTURE" name="Pitch Picture" datatype="objref" pos="84"/>
+        <attr attr_id="25" ukey="CLAIM_ICON" name="Claim Icon" datatype="objref" pos="85"/>
+        <attr attr_id="133" ukey="CLAIM_ICON_NO_ASTERISK" name="Claim Icon No Asterisk" datatype="objref" pos="86"/>
+        <attr attr_id="116" ukey="COMPATIBILITY_INFORMATION" name="Compatibilitiy Info" datatype="objref" pos="87"/>
+        <attr attr_id="91" ukey="VERSION_KEY_RTB" name="(Version) Key RTB" datatype="text" pos="88"/>
+        <attr attr_id="92" ukey="SPECIFIC_RTB1" name="Specific RTB1" datatype="text" pos="89"/>
+        <attr attr_id="93" ukey="SPECIFIC_RTB2" name="Specific RTB2" datatype="text" pos="90"/>
+        <attr attr_id="94" ukey="SPECIFIC_RTB3" name="Specific RTB3" datatype="text" pos="91"/>
+        <attr attr_id="95" ukey="SPECIFIC_RTB4" name="Specific RTB4" datatype="text" pos="92"/>
+        <attr attr_id="45" ukey="BENEFIT_FEATURE_OBJECT" name="Benefit Feature Object" datatype="number" pos="93"/>
+        <attr attr_id="34" ukey="VERSION_KEY_RTB_FEATURE_OBJECT" name="(Version) Key RTB Feature Object" datatype="number" pos="94"/>
+        <attr attr_id="27" ukey="SPECIFIC_RTB_FEATURE_OBJECTS" name="Specific RTB Feature Objects" datatype="number" pos="95"/>
+        <attr attr_id="35" ukey="MATERIAL_MAIN_FEATURE_OBJECT" name="Material (main) Feature Object" datatype="number" pos="97"/>
+        <attr attr_id="46" ukey="MATERIAL_HARDEST_FEATURE_OBJECT" name="Material (hardest) Feature Object" datatype="number" pos="98"/>
+        <attr attr_id="38" ukey="MATERIAL_MULTI_MATERIAL_FEATURE_OBJECTS" name="Material (Multi Material) Feature Objects" datatype="number" pos="99"/>
+        <attr attr_id="49" ukey="MATERIAL_COMPLEMENTARY_FEATURE_OBJECTS" name="Material (Complementary) Feature Objects" datatype="number" pos="100"/>
+        <attr attr_id="169" ukey="FUNCTIONS_KEYFEATURES_ICONS" name="Functions and Key Feature Icons (Handtools only)" datatype="objref" pos="102"/>
+        <attr attr_id="165" ukey="FUNCTIONS_KEYFEATURES_FEATURE_OBJECTS" name="Functions and Key Features (Handtools only)" datatype="number" pos="103"/>
+        <attr attr_id="37" ukey="APPLICATION_FEATURE_OBJECTS" name="Application Feature Objects" datatype="number" pos="104"/>
+        <attr attr_id="39" ukey="INTERFACE_FEATURE_OBJECTS" name="Interface Feature Objects" datatype="number" pos="105"/>
+        <attr attr_id="103" ukey="HIDE_IFO_ON_WEBSITE" name="Hide IFO on website" datatype="boolean" pos="106"/>
+        <attr attr_id="40" ukey="MACHINE_FEATURE_OBJECTS" name="Machine Feature Objects" datatype="number" pos="107"/>
+        <attr attr_id="115" ukey="ADDITIONAL_FILTER_FEATURE_OBJECTS" name="Addtional Filter Feature Objects" datatype="number" pos="109"/>
+        <attr attr_id="122" ukey="FAQ_FEATURE_OBJECTS" name="FAQ Feature Objects" datatype="number" pos="110"/>
+        <attr attr_id="139" ukey="REFERENCE_PRO_UPSELLING" name="PRO Upselling category" datatype="number" pos="111"/>
+        <attr attr_id="140" ukey="REFERENCE_EXPERT_UPSELLING" name="EXPERT Upselling category" datatype="number" pos="112"/>
+        <attr attr_id="87" ukey="REFERENCES_MIXED_SETS" name="References (for Mixed Sets)" datatype="number" pos="113"/>
+        <attr attr_id="166" ukey="PROMOTION_IMAGE" name="Promotion image" datatype="objref" pos="114"/>
+        <attr attr_id="167" ukey="PROMOTION_DESCRIPTION" name="Promotion description" datatype="text" pos="115"/>
+        <attr attr_id="106" ukey="RELATED_TOOLS" name="Related Tools" datatype="objref" pos="118"/>
+        <attr attr_id="107" ukey="VARIANT_FILTERS" name="Variant Filters" datatype="text" pos="119"/>
+        <attr attr_id="138" ukey="LANDINGSPAGES_DE" name="Landing pages Germany" datatype="choice" pos="251"/>
+        <attr attr_id="112" ukey="CANONICAL_REF_CCAT_ID" name="Canonical reference category" datatype="number" pos="311"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-09-30T13:29:04.000000" action="C" id="288" level="1">
+      <ukey>AC_BENEFIT_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_BENEFIT_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_BENEFIT_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>4</pos>
+      <catattrs>
+        <attr attr_id="56" ukey="BFO_BENEFIT_LOVS" name="Benefit LoVs" datatype="choice" pos="4"/>
+        <attr attr_id="55" ukey="BFO_BENEFIT_ICON" name="Benefit Icon" datatype="objref" pos="5"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-09-30T13:41:00.000000" action="C" id="289" level="1">
+      <ukey>AC_VERSION_KEY_RTB_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_VERSION_KEY_RTB_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_VERSION_KEY_RTB_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>5</pos>
+      <catattrs>
+        <attr attr_id="59" ukey="KRTBFO_KEY_RTB_LOVS" name="Key RTB LoVs" datatype="choice" pos="4"/>
+        <attr attr_id="60" ukey="KRTBFO_SHORT_DESCRIPTION_SMALL" name="Short description (small)" datatype="text" pos="6"/>
+        <attr attr_id="61" ukey="KRTBFO_SHORT_DESCRIPTION_REGULAR" name="Short description (regular)" datatype="text" pos="7"/>
+        <attr attr_id="57" ukey="KRTBFO_LONGTEXT" name="Long text" datatype="text" pos="8"/>
+        <attr attr_id="58" ukey="KRTBFO_RTB_ICON" name="RTB Icon" datatype="objref" pos="9"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2024-11-26T16:16:57.000000" action="C" id="290" level="1">
+      <ukey>AC_SPECIFIC_RTB_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_SPECIFIC_RTB_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_SPECIFIC_RTB_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>6</pos>
+      <catattrs>
+        <attr attr_id="62" ukey="SRTBFO_SPECIFIC_RTB_LOVS" name="Specific RTB LoVs" datatype="choice" pos="4"/>
+        <attr attr_id="63" ukey="SRTBFO_SHORT_DESCRIPTION_SMALL" name="Short description (small)" datatype="text" pos="6"/>
+        <attr attr_id="64" ukey="SRTBFO_SHORT_DESCRIPTION_REGULAR" name="Short description (regular)" datatype="text" pos="7"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-09-30T13:41:42.000000" action="C" id="291" level="1">
+      <ukey>AC_MATERIAL_L1_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_MATERIAL_L1_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_MATERIAL_L1_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>7</pos>
+      <catattrs>
+        <attr attr_id="66" ukey="MATFO_MATERIAL_LOVS" name="Material" datatype="choice" pos="3"/>
+        <attr attr_id="68" ukey="MATFO_SYNONYMS" name="Synonyms" datatype="text" pos="4"/>
+        <attr attr_id="69" ukey="MATFO_USAGE_EXAMPLE" name="Usage Example" datatype="text" pos="5"/>
+        <attr attr_id="67" ukey="MATFO_INTRO_DESCRIPTION" name="Intro Description" datatype="text" pos="6"/>
+        <attr attr_id="65" ukey="MATFO_MATERIAL_ICON" name="Material Icon" datatype="objref" pos="7"/>
+        <attr attr_id="126" ukey="SORT_POS" name="Position" datatype="number" pos="9"/>
+        <attr attr_id="127" ukey="FILTER_CLUSTER" name="Filter Cluster" datatype="choice" pos="10"/>
+        <attr attr_id="134" ukey="CLUSTER_ICON" name="Cluster Icon" datatype="objref" pos="11"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-09-30T13:20:29.000000" action="C" id="292" level="1">
+      <ukey>AC_APPLICATION_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_APPLICATION_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_APPLICATION_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>8</pos>
+      <catattrs>
+        <attr attr_id="70" ukey="AFO_APPLICATION_LOVS" name="Application" datatype="choice" pos="2"/>
+        <attr attr_id="109" ukey="APPLICATION_PICTURE" name="Application Picture" datatype="objref" pos="5"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-09-30T13:30:45.000000" action="C" id="293" level="1">
+      <ukey>AC_INTERFACE_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_INTERFACE_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_INTERFACE_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>9</pos>
+      <catattrs>
+        <attr attr_id="75" ukey="IFO_INTERFACE_LOVS" name="Interface" datatype="choice" pos="4"/>
+        <attr attr_id="73" ukey="IFO_SHORT_DESCRIPTION_REGULAR" name="Short description (regular)" datatype="text" pos="5"/>
+        <attr attr_id="74" ukey="IFO_FEATURE_IMAGE_SERIES" name="Feature Image Series" datatype="objref" pos="7"/>
+        <attr attr_id="125" ukey="SORT_POS" name="Position" datatype="number" pos="9"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-09-30T13:44:53.000000" action="C" id="294" level="1">
+      <ukey>AC_MACHINE_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_MACHINE_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_MACHINE_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>10</pos>
+      <catattrs>
+        <attr attr_id="78" ukey="MACHFO_MACHINE_LOVS" name="Machine" datatype="choice" pos="4"/>
+        <attr attr_id="76" ukey="MACHFO_SHORT_DESCRIPTION_REGULAR" name="Short description (regular)" datatype="text" pos="5"/>
+        <attr attr_id="77" ukey="MACHFO_MACHINE_ICONS" name="Machine Icons" datatype="objref" pos="6"/>
+        <attr attr_id="124" ukey="SORT_POS" name="Position" datatype="number" pos="8"/>
+        <attr attr_id="135" ukey="FILTER_CLUSTER" name="Filter Cluster" datatype="choice" pos="9"/>
+        <attr attr_id="136" ukey="CLUSTER_ICON" name="Cluster Icon" datatype="objref" pos="10"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2026-02-26T14:18:09.000000" action="C" id="295" level="1">
+      <ukey>AC_TRADES_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_TRADES_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_TRADES_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>11</pos>
+      <catattrs>
+        <attr attr_id="79" ukey="TFO_TRADES_LOVS" name="Trades LoVs" datatype="choice" pos="5"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2017-05-09T10:11:26.000000" udat="2024-11-26T17:14:22.000000" action="C" id="297" level="1">
+      <ukey>AC_OCS_MMP_ProductListingPage</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_OCS_MMP_ProductListingPage</clText2000>
+        <clText2000 cl="en-GB">AC_OCS_MMP_ProductListingPage</clText2000>
+      </name>
+      <pos>12</pos>
+      <catattrs>
+        <attr attr_id="128" ukey="SUBHEADLINE_TEXT" name="Subheadline Text" datatype="text" pos="1"/>
+        <attr attr_id="86" ukey="TILE_IMAGE" name="Tile image" datatype="blob" pos="2"/>
+        <attr attr_id="118" ukey="TILE_IMAGE_WITHOUT_EXPERT" name="Tile image (without EXPERT products)" datatype="blob" pos="4"/>
+        <attr attr_id="100" ukey="STRONG_FILTER_SEO_GLOBAL" name="Strong filter SEO (global)" datatype="text" pos="6"/>
+        <attr attr_id="101" ukey="STRONG_FILTER_SEO_CSO" name="Strong filter SEO (local)" datatype="table" pos="7"/>
+        <attr attr_id="102" ukey="STRONG_FILTER_SEO_BLACKLIST_CSO" name="Strong filter SEO blacklist (local)" datatype="table" pos="8"/>
+        <attr attr_id="137" ukey="CANONICAL_REF_CCAT_ID" name="Canonical reference category" datatype="number" pos="9"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2017-05-09T10:07:27.000000" udat="2024-11-26T16:25:46.000000" action="C" id="299" level="1">
+      <ukey>AC_OCS_MMP_Root</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_OCS_MMP_Root</clText2000>
+        <clText2000 cl="en-GB">AC_OCS_MMP_Root</clText2000>
+      </name>
+      <pos>13</pos>
+      <catattrs>
+        <attr attr_id="89" ukey="ROOT_NAME" name="Root name" datatype="text" pos="1"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2024-11-26T16:16:57.000000" action="C" id="325" level="1">
+      <ukey>AC_ADDITIONAL_FILTER_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_ADDITIONAL_FILTER_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_ADDITIONAL_FILTER_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>14</pos>
+      <catattrs>
+        <attr attr_id="114" ukey="AFFO_ADDITIONAL_FILTER_LOVS" name="Additional Filters" datatype="choice" pos="2"/>
+        <attr attr_id="123" ukey="SORT_POS" name="Position" datatype="number" pos="3"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-03-28T14:53:25.000000" action="C" id="341" level="1">
+      <ukey>AC_FAQ_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_FAQ_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_FAQ_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>15</pos>
+      <catattrs>
+        <attr attr_id="120" ukey="FAQFO_QUESTION" name="Question" datatype="text" pos="2"/>
+        <attr attr_id="119" ukey="FAQFO_ANSWER" name="Answer" datatype="text" pos="3"/>
+        <attr attr_id="121" ukey="FAQFO_EXAMPLE_PIC" name="Example Picture (language neutral)" datatype="objref" pos="4"/>
+        <attr attr_id="162" ukey="FAQFO_EXAMPLE_PIC_DE" name="Example Picture (German)" datatype="objref" pos="16"/>
+        <attr attr_id="131" ukey="SORT_POS" name="Position" datatype="number" pos="46"/>
+        <attr attr_id="130" ukey="FILTER_CLUSTER" name="Filter Cluster" datatype="choice" pos="47"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2025-08-01T16:25:13.000000" action="C" id="351" level="1">
+      <ukey>AC_LEGAL_DISCLAIMER_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_LEGAL_DISCLAIMER_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_LEGAL_DISCLAIMER_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>16</pos>
+    </categorytype>
+    <categorytype cdat="2007-07-04T11:20:58.000000" udat="2025-09-02T09:58:37.000000" action="C" id="353" level="1">
+      <ukey>OCS_PRO</ukey>
+      <name>
+        <clText2000 cl="de-DE">OCS_PRO</clText2000>
+        <clText2000 cl="en-GB">OCS_PRO</clText2000>
+      </name>
+      <pos>17</pos>
+      <shortdesc>
+        <clText2000 cl="de-DE">Vorlage für Kategorien Onlinekatalog PRO TOOLS</clText2000>
+        <clText2000 cl="en-GB">Template for categories of online catalogue PRO TOOLS</clText2000>
+      </shortdesc>
+      <longdesc>
+        <clText2000 cl="de-DE">::do=279512</clText2000>
+        <clText2000 cl="en-GB">::do=279512</clText2000>
+      </longdesc>
+      <catattrs>
+        <attr attr_id="145" ukey="CATEGORY_IMAGE_CSO" name="Category image CSO" datatype="table" pos="8"/>
+        <attr attr_id="148" ukey="IMAGE_RELAUNCH_CATEGORY_PRODUCT" name="Category product image (Relaunch)" datatype="blob" pos="9"/>
+        <attr attr_id="150" ukey="TEXT" name="Category text" datatype="text" pos="12"/>
+        <attr attr_id="142" ukey="STRONG_FILTER_SEO_CSO" name="Strong filter SEO (local)" datatype="table" pos="14"/>
+        <attr attr_id="143" ukey="STRONG_FILTER_SEO_BLACKLIST_CSO" name="Strong filter SEO blacklist (local)" datatype="table" pos="15"/>
+        <attr attr_id="144" ukey="OCS_FILTER" name="OCS_Filter" datatype="boolean" pos="16"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2024-10-08T19:45:49.000000" action="C" id="356" level="1">
+      <ukey>AC_ADDITIONAL_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_ADDITIONAL_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_ADDITIONAL_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>18</pos>
+    </categorytype>
+    <categorytype cdat="2024-12-18T14:19:17.000000" udat="2025-08-11T15:19:57.000000" action="C" id="374" level="1">
+      <ukey>UGO</ukey>
+      <name>
+        <clText2000 cl="de-DE">UGO</clText2000>
+        <clText2000 cl="en-GB">UGO</clText2000>
+      </name>
+      <pos>19</pos>
+      <catattrs>
+        <attr attr_id="153" ukey="OVERLINE" name="Overline" datatype="text" pos="1"/>
+        <attr attr_id="154" ukey="SPEC_1" name="Spec 1" datatype="text" pos="2"/>
+        <attr attr_id="155" ukey="VALUE_1" name="Value 1" datatype="text" pos="3"/>
+        <attr attr_id="156" ukey="SPEC_2" name="Spec 2" datatype="text" pos="4"/>
+        <attr attr_id="157" ukey="VALUE_2" name="Value 2" datatype="text" pos="5"/>
+        <attr attr_id="160" ukey="UGO_IMAGE" name="Usage Guidance Spec Image" datatype="objref" pos="8"/>
+      </catattrs>
+    </categorytype>
+    <categorytype cdat="2024-12-19T11:19:22.000000" udat="2024-12-19T11:19:22.000000" action="C" id="375" level="1">
+      <ukey>UGO_ROOT</ukey>
+      <name>
+        <clText2000 cl="de-DE">UGO_ROOT</clText2000>
+        <clText2000 cl="en-GB">UGO_ROOT</clText2000>
+      </name>
+      <pos>20</pos>
+    </categorytype>
+    <categorytype cdat="2020-03-23T16:12:06.000000" udat="2026-02-26T14:18:30.000000" action="C" id="380" level="1">
+      <ukey>AC_FUNCTIONS_KEYFEATURE_FEATURE_OBJECT_OUTPUT</ukey>
+      <name>
+        <clText2000 cl="de-DE">AC_FUNCTIONS_KEYFEATURE_FEATURE_OBJECT_OUTPUT</clText2000>
+        <clText2000 cl="en-GB">AC_FUNCTIONS_KEYFEATURE_FEATURE_OBJECT_OUTPUT</clText2000>
+      </name>
+      <pos>21</pos>
+      <catattrs>
+        <attr attr_id="164" ukey="FKFFO_FUNCTION_KEYFATURE_LOVS" name="Function / Key feature" datatype="choice" pos="3"/>
+        <attr attr_id="163" ukey="FKFFO_FUNCTION_KEYFEATURE_ICON" name="Function / Key feature Icon" datatype="objref" pos="7"/>
+      </catattrs>
+    </categorytype>
+  </businessObjects>
+</webexport>
