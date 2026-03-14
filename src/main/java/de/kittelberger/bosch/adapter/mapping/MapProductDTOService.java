@@ -9,10 +9,18 @@ import de.kittelberger.bosch.adapter.util.ClUtil;
 import de.kittelberger.webexport602w.solr.api.dto.ProductDTO;
 import de.kittelberger.webexport602w.solr.api.dto.SkuDTO;
 import de.kittelberger.webexport602w.solr.api.generated.Attrval;
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 @Component
 public class MapProductDTOService {
@@ -24,46 +32,87 @@ public class MapProductDTOService {
   }
 
   public List<Product> map(final Locale locale) {
-    List<ProductDTO> productDTOs = loadDataService.getProductDTOs();
-    List<SkuDTO> skuDTOs = loadDataService.getSkuDTOs();
-    return productDTOs.stream().map(productDTO -> {
-      List<String> skus = productDTO.getSkus().getSku()
-        .stream()
-        .map(de.kittelberger.webexport602w.solr.api.generated.Product.Skus.Sku::getSku)
-        .toList();
-      List<SkuDTO> skusForProduct = skuDTOs.stream()
-        .filter(skuDTO -> skus.stream().anyMatch(skuDTO.getSku()::equals))
-        .toList();
-      return map(productDTO, skusForProduct, locale);
-    })
-      .toList();
+    List<Product> products = new ArrayList<>();
+    stream(locale, products::add);
+    return products;
   }
 
-  private Product map(
+  public void stream(final Locale locale, Consumer<Product> consumer) {
+    List<ProductDTO> productDTOs = new ArrayList<>(loadDataService.getProductDTOs());
+    Set<Long> requestedProductIds = productDTOs.stream()
+      .map(ProductDTO::getId)
+      .filter(Objects::nonNull)
+      .collect(Collectors.toSet());
+    Set<String> requestedSkuCodes = productDTOs.stream()
+      .filter(productDTO -> productDTO.getSkus() != null && productDTO.getSkus().getSku() != null)
+      .flatMap(productDTO -> productDTO.getSkus().getSku().stream())
+      .map(de.kittelberger.webexport602w.solr.api.generated.Product.Skus.Sku::getSku)
+      .filter(Objects::nonNull)
+      .collect(Collectors.toSet());
+
+    List<SkuDTO> skuDTOs = new ArrayList<>(loadDataService.getSkuDTOs(requestedProductIds));
+    Map<String, List<SkuDTO>> skuDTOsBySku = skuDTOs.stream()
+      .filter(skuDTO -> skuDTO.getSku() != null && requestedSkuCodes.contains(skuDTO.getSku()))
+      .collect(Collectors.groupingBy(SkuDTO::getSku));
+
+    try {
+      for (ProductDTO productDTO : productDTOs) {
+        Product product = mapProduct(productDTO, skuDTOsBySku, locale);
+        if (product != null) {
+          consumer.accept(product);
+        }
+      }
+    } finally {
+      productDTOs.clear();
+      skuDTOs.clear();
+      skuDTOsBySku.clear();
+    }
+  }
+
+  private Product mapProduct(
     final ProductDTO productDTO,
-    final List<SkuDTO> skuDTO,
+    final Map<String, List<SkuDTO>> skuDTOsBySku,
     final Locale locale
   ) {
+    if (productDTO.getSkus() == null || productDTO.getSkus().getSku() == null) {
+      return null;
+    }
+
+    List<SkuDTO> skusForProduct = productDTO.getSkus().getSku()
+      .stream()
+      .map(de.kittelberger.webexport602w.solr.api.generated.Product.Skus.Sku::getSku)
+      .filter(Objects::nonNull)
+      .map(skuDTOsBySku::get)
+      .filter(Objects::nonNull)
+      .flatMap(Collection::stream)
+      .toList();
+
+    Map<String, List<Attribute>> skuAttributes = skusForProduct.stream()
+      .filter(skuDTO -> skuDTO.getAttrvals() != null && skuDTO.getAttrvals().getAttrval() != null)
+      .collect(Collectors.toMap(
+        SkuDTO::getSku,
+        skuDTO -> mapSkuAttributes(skuDTO, locale)
+      ));
+
     return new Product(
       mapProductMetaData(productDTO, locale),
-      mapSkuMetaData(skuDTO, locale),
+      mapSkuMetaData(skusForProduct, locale),
       mapProductAttributes(productDTO, locale),
-      skuDTO.stream().map(sku -> mapSkuAttributes(sku, locale)).flatMap(Collection::stream).toList()
+      skuAttributes
     );
   }
-
 
   private ProductMetaData mapProductMetaData(
     final ProductDTO productDTO,
     final Locale locale
-  ){
+  ) {
     return new ProductMetaData(ClUtil.getCleanedValue(productDTO.getName(), locale), productDTO.getId(), productDTO.getArtno());
   }
 
   private List<SkuMetaData> mapSkuMetaData(
     final List<SkuDTO> skuDTO,
     final Locale locale
-  ){
+  ) {
     return skuDTO
       .stream()
       .map(sku -> new SkuMetaData(ClUtil.getCleanedValue(sku.getName(), locale), sku.getId(), sku.getArtno()))
@@ -72,18 +121,28 @@ public class MapProductDTOService {
 
   private List<Attribute> mapProductAttributes(
     final ProductDTO productDTO,
-    final Locale locale) {
+    final Locale locale
+  ) {
     List<Attrval> attrvals = productDTO.getAttrvals().getAttrval();
     return attrvals.stream().map(attrval ->
         Attribute.builder()
           .ukey(attrval.getUkey())
-          .referenceIds(Map.of(
-            "attrId", attrval.getAttrdId().longValue()
-          ))
+          .referenceIds(mapProductReferenceIds(attrval))
           .references(mapAttrvalValues(attrval, locale))
           .build())
       .toList();
+  }
 
+  private Map<String, Long> mapProductReferenceIds(final Attrval attrval) {
+    if (attrval.getAttrId() == null) {
+      return null;
+    }
+    Map<String, Long> result = new HashMap<>();
+    result.put("attrId", attrval.getAttrId().longValue());
+    if (attrval.getMediaobject() != null) {
+      result.put("mediaObjectId", attrval.getMediaobject().longValue());
+    }
+    return result;
   }
 
   private List<Attribute> mapSkuAttributes(
@@ -94,10 +153,7 @@ public class MapProductDTOService {
     return attrvals.stream().map(attrval ->
         Attribute.builder()
           .ukey(attrval.getUkey())
-          .referenceIds(Map.of(
-            "attrId", attrval.getAttrdId().longValue(),
-            "mediaObjectId", attrval.getMediaobject().longValue()
-          ))
+          .referenceIds(mapProductReferenceIds(attrval))
           .references(mapAttrvalValues(attrval, locale))
           .build())
       .toList();

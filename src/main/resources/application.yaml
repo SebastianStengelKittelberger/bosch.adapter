@@ -1,14 +1,21 @@
 spring:
   application:
     name: bosch.adapter
+  mvc:
+    async:
+      request-timeout: 1800000  # 30 minutes — needed for StreamingResponseBody
 xml:
   directory: data/xml
-  product-limit: 10     # set to -1 to process all products
-  product-ids: 100024723  # comma-separated list of product IDs to process; empty = all
+  product-limit: -1     # set to -1 to process all products
+  product-ids:   # comma-separated list of product IDs to process; empty = all
 server:
   servlet:
     context-path: /adapter
   port: 8082
+  connection-timeout: 1800000  # 30 minutes in ms
+  tomcat:
+    connection-timeout: 1800000
+    keep-alive-timeout: 1800000
 domain:
   media:
     default: https://www.bosch-professional.com

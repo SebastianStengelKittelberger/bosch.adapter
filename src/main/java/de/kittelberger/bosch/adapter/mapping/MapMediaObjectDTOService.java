@@ -55,7 +55,7 @@ public class MapMediaObjectDTOService {
   private Attribute mapAttribute(final Attrval attrval, final Locale locale) {
     return Attribute.builder()
       .ukey(attrval.getUkey())
-      .referenceIds(Map.of("attrId", attrval.getAttrdId().longValue()))
+      .referenceIds(attrval.getAttrdId() != null ? Map.of("attrId", attrval.getAttrdId().longValue()) : null)
       .references(mapAttrvalValues(attrval, locale))
       .build();
   }

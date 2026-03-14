@@ -2,6 +2,7 @@ package de.kittelberger.bosch.adapter.data;
 
 import de.kittelberger.webexport602w.solr.api.dto.*;
 import de.kittelberger.webexport602w.solr.api.generated.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,12 @@ public class LoadDataService {
 
   private final XmlFileLoader xmlFileLoader;
 
+  @Value("${xml.product-limit:-1}")
+  private int productLimit;
+
+  @Value("${xml.product-ids:}")
+  private String configuredProductIds;
+
   public LoadDataService(XmlFileLoader xmlFileLoader) {
     this.xmlFileLoader = xmlFileLoader;
   }
@@ -23,81 +30,47 @@ public class LoadDataService {
   // Public methods – one per XML type
   // ---------------------------------------------------------------------------
 
-  @Cacheable("products")
   public List<ProductDTO> getProductDTOs() {
+    Set<Long> requestedProductIds = parseConfiguredProductIds();
     List<ProductDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("product")) {
-      Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
-      for (Product p : bo.getProduct()) {
-        ProductDTO dto = new ProductDTO();
-        dto.setId(toLong(p.getId()));
-        dto.setCdat(toDate(p.getCdat()));
-        dto.setUdat(toDate(p.getUdat()));
-        dto.setAction(toChar(p.getAction()));
-        dto.setDdat(toDate(p.getDdat()));
-        dto.setMfact(p.getMfact());
-        dto.setArtno(p.getArtno());
-        dto.setName(toMap(p.getName()));
-        dto.setText(toMap(p.getText()));
-        dto.setAttrvals(p.getAttrvals());
-        dto.setLogo(p.getLogo());
-        dto.setImg(p.getImg());
-        dto.setSkus(p.getSkus());
-        if (p.getCategories() != null) {
-          dto.setCategories_category_id(
-            p.getCategories().getCategory().stream()
-              .map(c -> toLong(c.getId()))
-              .filter(Objects::nonNull)
-              .toArray(Long[]::new));
-        }
-        if (p.getProducttypes() != null) {
-          dto.setProducttypes_producttype_id(
-            p.getProducttypes().getProducttype().stream()
-              .map(pt -> toLong(pt.getId()))
-              .filter(Objects::nonNull)
-              .toArray(Long[]::new));
-        }
-        result.add(dto);
+    xmlFileLoader.forEachElementOfType("product", "product", Product.class, product -> {
+      Long productId = toLong(product.getId());
+      if (!requestedProductIds.isEmpty() && !requestedProductIds.contains(productId)) {
+        return true;
       }
-    }
+
+      result.add(toProductDTO(product));
+      return productLimit < 0 || result.size() < productLimit;
+    });
     return result;
   }
 
-  @Cacheable("skus")
-  public List<SkuDTO> getSkuDTOs() {
+  public List<SkuDTO> getSkuDTOs(Set<Long> productIds) {
     List<SkuDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("sku")) {
-      Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
-      for (Sku s : bo.getSku()) {
-        SkuDTO dto = new SkuDTO();
-        dto.setId(toLong(s.getId()));
-        dto.setCdat(toDate(s.getCdat()));
-        dto.setUdat(toDate(s.getUdat()));
-        dto.setAction(toChar(s.getAction()));
-        dto.setDdat(toDate(s.getDdat()));
-        dto.setProduct(toLong(s.getProduct()));
-        dto.setMfact(s.getMfact());
-        dto.setArtno(s.getArtno());
-        dto.setCso(s.getCso());
-        dto.setSku(s.getSku());
-        dto.setGtin(s.getGtin());
-        dto.setEan(s.getEan());
-        dto.setUpc(s.getUpc());
-        dto.setAttrvals(s.getAttrvals());
-        result.add(dto);
-      }
+    if (productIds.isEmpty()) {
+      return result;
     }
+
+    xmlFileLoader.forEachElementOfType("sku", "sku", Sku.class, sku -> {
+      Long productId = toLong(sku.getProduct());
+      if (!productIds.contains(productId)) {
+        return true;
+      }
+
+      result.add(toSkuDTO(sku));
+      return true;
+    });
     return result;
   }
 
   @Cacheable("attrs")
   public List<AttrDTO> getAttrDTOs() {
     List<AttrDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("attr")) {
+    xmlFileLoader.forEachFileOfType("attr", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Attr a : bo.getAttr()) {
         AttrDTO dto = new AttrDTO();
         dto.setId(toLong(a.getId()));
@@ -121,16 +94,18 @@ public class LoadDataService {
         dto.setRefobjecttypes(a.getRefobjecttypes());
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("categories")
   public List<CategoryDTO> getCategoryDTOs() {
     List<CategoryDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("category")) {
+    xmlFileLoader.forEachFileOfType("category", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Category c : bo.getCategory()) {
         CategoryDTO dto = new CategoryDTO();
         dto.setId(toLong(c.getId()));
@@ -160,16 +135,18 @@ public class LoadDataService {
         }
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("categorytypes")
   public List<CategorytypeDTO> getCategorytypeDTOs() {
     List<CategorytypeDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("categorytype")) {
+    xmlFileLoader.forEachFileOfType("categorytype", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Categorytype ct : bo.getCategorytype()) {
         CategorytypeDTO dto = new CategorytypeDTO();
         dto.setId(toLong(ct.getId()));
@@ -185,16 +162,18 @@ public class LoadDataService {
         dto.setCatattrs(ct.getCatattrs());
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("lobtypes")
   public List<LobtypeDTO> getLobtypeDTOs() {
     List<LobtypeDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("lobtype")) {
+    xmlFileLoader.forEachFileOfType("lobtype", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Lobtype lt : bo.getLobtype()) {
         LobtypeDTO dto = new LobtypeDTO();
         dto.setId(toLong(lt.getId()));
@@ -212,16 +191,18 @@ public class LoadDataService {
         dto.setDescr(toMap(lt.getDescr()));
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("mediaobjects")
   public List<MediaobjectDTO> getMediaobjectDTOs() {
     List<MediaobjectDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("mediaobject")) {
+    xmlFileLoader.forEachFileOfType("mediaobject", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Mediaobject m : bo.getMediaobject()) {
         MediaobjectDTO dto = new MediaobjectDTO();
         dto.setId(toLong(m.getId()));
@@ -238,16 +219,18 @@ public class LoadDataService {
         dto.setLobvalues(m.getLobvalues());
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("mediaobjecttypes")
   public List<MediaobjecttypeDTO> getMediaobjecttypeDTOs() {
     List<MediaobjecttypeDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("mediaobjecttype")) {
+    xmlFileLoader.forEachFileOfType("mediaobjecttype", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Mediaobjecttype mt : bo.getMediaobjecttype()) {
         MediaobjecttypeDTO dto = new MediaobjecttypeDTO();
         dto.setId(toLong(mt.getId()));
@@ -267,16 +250,18 @@ public class LoadDataService {
         dto.setMediaobjects(mt.getMediaobjects());
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("mfacts")
   public List<MfactDTO> getMfactDTOs() {
     List<MfactDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("mfact")) {
+    xmlFileLoader.forEachFileOfType("mfact", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Mfact m : bo.getMfact()) {
         MfactDTO dto = new MfactDTO();
         dto.setId(toLong(m.getId()));
@@ -300,16 +285,18 @@ public class LoadDataService {
         }
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("prices")
   public List<PriceDTO> getPriceDTOs() {
     List<PriceDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("price")) {
+    xmlFileLoader.forEachFileOfType("price", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Price p : bo.getPrice()) {
         PriceDTO dto = new PriceDTO();
         dto.setCdat(toDate(p.getCdat()));
@@ -340,16 +327,18 @@ public class LoadDataService {
         dto.setValidTo(toDate(p.getValidTo()));
         result.add(dto);
       }
-    }
+    });
     return result;
   }
 
   @Cacheable("producttypes")
   public List<ProducttypeDTO> getProducttypeDTOs() {
     List<ProducttypeDTO> result = new ArrayList<>();
-    for (Webexport we : xmlFileLoader.parseFilesOfType("producttype")) {
+    xmlFileLoader.forEachFileOfType("producttype", we -> {
       Webexport.BusinessObjects bo = we.getBusinessObjects();
-      if (bo == null) continue;
+      if (bo == null) {
+        return;
+      }
       for (Producttype pt : bo.getProducttype()) {
         ProducttypeDTO dto = new ProducttypeDTO();
         dto.setId(toLong(pt.getId()));
@@ -370,8 +359,73 @@ public class LoadDataService {
         dto.setProducts(pt.getProducts());
         result.add(dto);
       }
-    }
+    });
     return result;
   }
-}
 
+  private Set<Long> parseConfiguredProductIds() {
+    if (configuredProductIds == null || configuredProductIds.isBlank()) {
+      return Set.of();
+    }
+
+    Set<Long> productIds = new LinkedHashSet<>();
+    for (String token : configuredProductIds.split(",")) {
+      String trimmed = token.trim();
+      if (!trimmed.isEmpty()) {
+        productIds.add(Long.valueOf(trimmed));
+      }
+    }
+    return productIds;
+  }
+
+  private ProductDTO toProductDTO(Product p) {
+    ProductDTO dto = new ProductDTO();
+    dto.setId(toLong(p.getId()));
+    dto.setCdat(toDate(p.getCdat()));
+    dto.setUdat(toDate(p.getUdat()));
+    dto.setAction(toChar(p.getAction()));
+    dto.setDdat(toDate(p.getDdat()));
+    dto.setMfact(p.getMfact());
+    dto.setArtno(p.getArtno());
+    dto.setName(toMap(p.getName()));
+    dto.setText(toMap(p.getText()));
+    dto.setAttrvals(p.getAttrvals());
+    dto.setLogo(p.getLogo());
+    dto.setImg(p.getImg());
+    dto.setSkus(p.getSkus());
+    if (p.getCategories() != null) {
+      dto.setCategories_category_id(
+        p.getCategories().getCategory().stream()
+          .map(c -> toLong(c.getId()))
+          .filter(Objects::nonNull)
+          .toArray(Long[]::new));
+    }
+    if (p.getProducttypes() != null) {
+      dto.setProducttypes_producttype_id(
+        p.getProducttypes().getProducttype().stream()
+          .map(pt -> toLong(pt.getId()))
+          .filter(Objects::nonNull)
+          .toArray(Long[]::new));
+    }
+    return dto;
+  }
+
+  private SkuDTO toSkuDTO(Sku s) {
+    SkuDTO dto = new SkuDTO();
+    dto.setId(toLong(s.getId()));
+    dto.setCdat(toDate(s.getCdat()));
+    dto.setUdat(toDate(s.getUdat()));
+    dto.setAction(toChar(s.getAction()));
+    dto.setDdat(toDate(s.getDdat()));
+    dto.setProduct(toLong(s.getProduct()));
+    dto.setMfact(s.getMfact());
+    dto.setArtno(s.getArtno());
+    dto.setCso(s.getCso());
+    dto.setSku(s.getSku());
+    dto.setGtin(s.getGtin());
+    dto.setEan(s.getEan());
+    dto.setUpc(s.getUpc());
+    dto.setAttrvals(s.getAttrvals());
+    return dto;
+  }
+}
