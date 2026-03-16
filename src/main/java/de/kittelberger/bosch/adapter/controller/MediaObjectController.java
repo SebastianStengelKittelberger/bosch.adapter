@@ -1,6 +1,7 @@
 package de.kittelberger.bosch.adapter.controller;
 
 import de.kittelberger.bosch.adapter.mapping.MapMediaObjectDTOService;
+import de.kittelberger.bosch.adapter.model.Image;
 import de.kittelberger.bosch.adapter.model.MediaObject;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,11 +18,10 @@ public class MediaObjectController {
   }
 
   @GetMapping("{country}/{language}/media-objects")
-  public List<MediaObject> getMediaObjects(
+  public List<Image> getMediaObjects(
     @PathVariable String country,
     @PathVariable String language
   ) {
-    Locale locale = Locale. of(language, country);
-    return mapMediaObjectDTOService.map(locale);
+    return mapMediaObjectDTOService.map();
   }
 }

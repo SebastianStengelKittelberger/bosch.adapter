@@ -29,6 +29,7 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
+    <ptseoutils.version>1.0.7</ptseoutils.version>
 	</properties>
 	<dependencies>
 		<dependency>

@@ -12,7 +12,6 @@ server:
   servlet:
     context-path: /adapter
   port: 8082
-  connection-timeout: 1800000  # 30 minutes in ms
   tomcat:
     connection-timeout: 1800000
     keep-alive-timeout: 1800000

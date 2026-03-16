@@ -13,4 +13,5 @@ public class MediaSpecifics {
   private String checksum;
   private Long size;
   private String mediaType;
+  private String fileName;
 }
