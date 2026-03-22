@@ -7,7 +7,6 @@ public record Product(
   ProductMetaData productMetaData,
   List<SkuMetaData> skuMetaData,
   List<Attribute> productAttributes,
-  Map<String, List<Attribute>> skuAttributes
-){
-
-}
+  Map<String, List<Attribute>> skuAttributes,
+  List<ProductType> productTypes
+) {}

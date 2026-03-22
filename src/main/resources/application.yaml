@@ -18,3 +18,13 @@ server:
 domain:
   media:
     default: https://www.bosch-professional.com
+
+elasticsearch:
+  enabled: true                      # auf true setzen um Produkte nach ES zu schreiben
+  host: localhost
+  port: 9200
+  product-index-prefix: bosch-products    # Index: {prefix}-{country}-{language}
+  reference-index-prefix: bosch-references # Index: {prefix}-{country}-{language}
+  media-object-index: bosch-media-objects  # global, locale-independent
+  config-index: bosch-config               # global config values (domain etc.)
+  batch-size: 100

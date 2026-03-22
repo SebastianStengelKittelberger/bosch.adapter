@@ -1,16 +1,23 @@
 package de.kittelberger.bosch.adapter.mapping;
 
 import de.kittelberger.bosch.adapter.data.LoadDataService;
+import de.kittelberger.bosch.adapter.model.AttrClass;
 import de.kittelberger.bosch.adapter.model.Attribute;
+import de.kittelberger.bosch.adapter.model.ObjAttr;
 import de.kittelberger.bosch.adapter.model.Product;
 import de.kittelberger.bosch.adapter.model.ProductMetaData;
+import de.kittelberger.bosch.adapter.model.ProductType;
 import de.kittelberger.bosch.adapter.model.SkuMetaData;
 import de.kittelberger.bosch.adapter.util.ClUtil;
 import de.kittelberger.webexport602w.solr.api.dto.ProductDTO;
+import de.kittelberger.webexport602w.solr.api.dto.ProducttypeDTO;
 import de.kittelberger.webexport602w.solr.api.dto.SkuDTO;
+import de.kittelberger.webexport602w.solr.api.generated.Attrclass;
 import de.kittelberger.webexport602w.solr.api.generated.Attrval;
+import de.kittelberger.webexport602w.solr.api.generated.Objecttype;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,9 +62,13 @@ public class MapProductDTOService {
       .filter(skuDTO -> skuDTO.getSku() != null && requestedSkuCodes.contains(skuDTO.getSku()))
       .collect(Collectors.groupingBy(SkuDTO::getSku));
 
+    Map<Long, ProducttypeDTO> productTypeById = loadDataService.getProducttypeDTOs().stream()
+      .filter(pt -> pt.getId() != null)
+      .collect(Collectors.toMap(ProducttypeDTO::getId, pt -> pt, (a, b) -> a));
+
     try {
       for (ProductDTO productDTO : productDTOs) {
-        Product product = mapProduct(productDTO, skuDTOsBySku, locale);
+        Product product = mapProduct(productDTO, skuDTOsBySku, productTypeById, locale);
         if (product != null) {
           consumer.accept(product);
         }
@@ -72,6 +83,7 @@ public class MapProductDTOService {
   private Product mapProduct(
     final ProductDTO productDTO,
     final Map<String, List<SkuDTO>> skuDTOsBySku,
+    final Map<Long, ProducttypeDTO> productTypeById,
     final Locale locale
   ) {
     if (productDTO.getSkus() == null || productDTO.getSkus().getSku() == null) {
@@ -98,8 +110,65 @@ public class MapProductDTOService {
       mapProductMetaData(productDTO, locale),
       mapSkuMetaData(skusForProduct, locale),
       mapProductAttributes(productDTO, locale),
-      skuAttributes
+      skuAttributes,
+      mapProductTypes(productDTO, productTypeById, locale)
     );
+  }
+
+  private List<ProductType> mapProductTypes(
+    final ProductDTO productDTO,
+    final Map<Long, ProducttypeDTO> productTypeById,
+    final Locale locale
+  ) {
+    Long[] ids = productDTO.getProducttypes_producttype_id();
+    if (ids == null || ids.length == 0) {
+      return List.of();
+    }
+    return Arrays.stream(ids)
+      .filter(Objects::nonNull)
+      .map(productTypeById::get)
+      .filter(Objects::nonNull)
+      .map(pt -> new ProductType(
+        pt.getId(),
+        pt.getUkey(),
+        ClUtil.getCleanedValue(pt.getName(), locale),
+        pt.getParentId(),
+        pt.getLevel(),
+        mapObjAttrs(pt.getObjattrs(), locale)
+      ))
+      .toList();
+  }
+
+  private List<ObjAttr> mapObjAttrs(
+    final Objecttype.Objattrs objattrs,
+    final Locale locale
+  ) {
+    if (objattrs == null || objattrs.getAttr() == null) {
+      return List.of();
+    }
+    return objattrs.getAttr().stream()
+      .map(attr -> new ObjAttr(
+        attr.getUkey(),
+        attr.getName(),
+        attr.getAttrId() != null ? attr.getAttrId().longValue() : null,
+        mapAttrClasses(attr.getAttrclasses(), locale)
+      ))
+      .toList();
+  }
+
+  private List<AttrClass> mapAttrClasses(
+    final Objecttype.Objattrs.Attr.Attrclasses attrclasses,
+    final Locale locale
+  ) {
+    if (attrclasses == null || attrclasses.getAttrclass() == null) {
+      return List.of();
+    }
+    return attrclasses.getAttrclass().stream()
+      .map(ac -> new AttrClass(
+        ClUtil.getValue(ac.getName(), locale),
+        ac.getUkey()
+      ))
+      .toList();
   }
 
   private ProductMetaData mapProductMetaData(
