@@ -33,6 +33,7 @@ public class MapAttrDTOService {
     return new Reference(
       attrDTO.getId(),
       attrDTO.getUkey(),
+      ClUtil.getValue(attrDTO.getName(), locale),
       Pair.of(attrDTO.getUkey(), mapAttrClasses(attrDTO.getAttrclasses(), locale))
     );
   }

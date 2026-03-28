@@ -11,5 +11,6 @@ import java.util.List;
 public class Reference {
   private Long id;
   private String ukey;
+  private String name;
   private Pair<String, List<AttrClass>> attrClasses;
 }
