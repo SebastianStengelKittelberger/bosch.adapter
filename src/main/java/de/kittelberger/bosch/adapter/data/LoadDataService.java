@@ -45,6 +45,16 @@ public class LoadDataService {
     return result;
   }
 
+  /** Loads all products from XML without applying the {@code xml.product-ids} filter. */
+  public List<ProductDTO> getAllProductDTOs() {
+    List<ProductDTO> result = new ArrayList<>();
+    xmlFileLoader.forEachElementOfType("product", "product", Product.class, product -> {
+      result.add(toProductDTO(product));
+      return true;
+    });
+    return result;
+  }
+
   public List<SkuDTO> getSkuDTOs(Set<Long> productIds) {
     List<SkuDTO> result = new ArrayList<>();
     if (productIds.isEmpty()) {
